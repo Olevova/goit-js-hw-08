@@ -1,2 +1,0 @@
-console.log("rrrrr");const e=document.querySelector("form");console.log(e),console.log("ffffff");const o={email:null,massage:null};e.addEventListener("input",(e=>{if("INPUT"===e.target.nodeName){const t=e.target.value;o.email=t}e.target.nodeName;const t=e.target.value;return o.massage=t,console.log(o),localStorage.setItem("feedback-form-state",JSON.stringify(o))}));
-//# sourceMappingURL=03-feedback.89997509.js.map
