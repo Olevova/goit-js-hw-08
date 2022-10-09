@@ -24,6 +24,14 @@ formEl.addEventListener("input", loadash.throttle((event) => {
 const dataValue = JSON.parse(localStorage.getItem("feedback-form-state"));
 // inputEl.value = dataValue.email;
 
+formEl.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log(dataValue);
+    inputEl.value = "";
+    textEl.value = "";
+    localStorage.clear();    
+})
+
 console.log(dataValue, textEl, dataValue.email);
 
 if (dataValue) {
