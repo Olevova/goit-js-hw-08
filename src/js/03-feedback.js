@@ -12,13 +12,11 @@ const clientInfo = {};
 formEl.addEventListener("input", loadash.throttle((event) => {
     console.log(event.currenTarget, event.target);
     if (event.target.nodeName === 'INPUT') {
-        const email = event.target.value;
-        clientInfo[event.target.name] = email;
+        clientInfo[event.target.name] = event.target.value;
     }
 
     if (event.target.nodeName === 'TEXTAREA') {
-        const massage = event.target.value;
-        clientInfo[event.target.name] = massage;
+        clientInfo[event.target.name] = event.target.value;
     }
     console.log(event);
     console.log(clientInfo);
