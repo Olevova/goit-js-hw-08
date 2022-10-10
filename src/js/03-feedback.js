@@ -44,5 +44,5 @@ console.log(dataValue, textEl, dataValue.email);
 
 if (dataValue) {
     inputEl.value = dataValue.email;
-    textEl.value = dataValue.massage;
+    textEl.value = dataValue.message;
 }
