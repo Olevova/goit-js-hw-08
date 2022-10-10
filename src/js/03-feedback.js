@@ -7,9 +7,10 @@ const inputEl = document.querySelector("input");
 const textEl = document.querySelector("textarea")
 
 // створення пустого обєкта для даних, а також слухача , який буде збирати данні та записувати їх в локал сторідж
-const clientInfo = {};
+
 
 formEl.addEventListener("input", loadash.throttle((event) => {
+    const clientInfo = {};
     console.log(event.currenTarget, event.target);
     if (event.target.nodeName === 'INPUT') {
         clientInfo[event.target.name] = event.target.value;
