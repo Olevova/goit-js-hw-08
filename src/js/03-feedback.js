@@ -1,6 +1,6 @@
 // підключаємо бібліотеку
 const loadash = require("lodash");
-console.log(loadash);
+// console.log(loadash);
 // дом елементи форми
 const formEl = document.querySelector('form');
 const inputEl = document.querySelector("input");
@@ -11,7 +11,7 @@ const clientInfo = {};
 
 formEl.addEventListener("input", loadash.throttle((event) => {
     
-    console.log(event.currenTarget, event.target);
+    // console.log(event.currenTarget, event.target);
     clientInfo[event.target.name] = event.target.value;
     console.log(clientInfo);
     return localStorage.setItem("feedback-form-state", JSON.stringify(clientInfo))
@@ -32,7 +32,7 @@ formEl.addEventListener("submit", (event) => {
     localStorage.removeItem("feedback-form-state");    
 })
 
-console.log(dataValue, textEl, dataValue.email);
+// console.log(dataValue, textEl, dataValue.email);
 
 if (dataValue) {
     inputEl.value = dataValue.email;
