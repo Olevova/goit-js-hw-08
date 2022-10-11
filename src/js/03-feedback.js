@@ -19,13 +19,13 @@ formEl.addEventListener("input", throttle((event) => {
 
 
 // Створення слухача на сабміт
-
 const dataValue = JSON.parse(localStorage.getItem("feedback-form-state"));
+
 // inputEl.value = dataValue.email;
 
 formEl.addEventListener("submit", (event) => {
     event.preventDefault();
-    console.log(clientInfo);
+    console.log({email:dataValue.email, message:dataValue.message});
     event.currentTarget.reset()
     // inputEl.value = "";
     // textEl.value = "";
