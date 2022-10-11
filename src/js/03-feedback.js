@@ -1,5 +1,6 @@
 // підключаємо бібліотеку
-const loadash = require("lodash");
+import throttle from 'lodash.throttle'; 
+// const loadash = require("lodash");
 // console.log(loadash);
 // дом елементи форми
 const formEl = document.querySelector('form');
@@ -9,11 +10,10 @@ const textEl = document.querySelector("textarea")
 // створення пустого обєкта для даних, а також слухача , який буде збирати данні та записувати їх в локал сторідж
 const clientInfo = {};
 
-formEl.addEventListener("input", loadash.throttle((event) => {
-    
+formEl.addEventListener("input", throttle((event) => {
     // console.log(event.currenTarget, event.target);
     clientInfo[event.target.name] = event.target.value;
-    console.log(clientInfo);
+    // console.log(clientInfo);
     return localStorage.setItem("feedback-form-state", JSON.stringify(clientInfo))
 },500))
 
@@ -25,7 +25,7 @@ const dataValue = JSON.parse(localStorage.getItem("feedback-form-state"));
 
 formEl.addEventListener("submit", (event) => {
     event.preventDefault();
-    console.log(dataValue);
+    console.log(clientInfo);
     event.currentTarget.reset()
     // inputEl.value = "";
     // textEl.value = "";

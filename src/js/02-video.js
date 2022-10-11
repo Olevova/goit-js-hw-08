@@ -1,6 +1,7 @@
 // імпортуємо потрібні модулі для роботи
 import Player from '@vimeo/player';
-const loadash = require("lodash");
+import throttle from 'lodash.throttle'; 
+// const loadash = require("lodash");
 
 // виділяємо плеєр та вішаємо на нього подію, за допомогою тротель робимо відслідковування події раз в секунду
 const iframe = document.querySelector('iframe');
@@ -9,10 +10,10 @@ const iframe = document.querySelector('iframe');
 const player = new Vimeo.Player(iframe);
 // console.log(player);
 
-player.on('timeupdate', loadash.throttle(function (event) {
+player.on('timeupdate', throttle(function (event) {
     const { seconds, percent, duration } = event;
     const stopTime= { seconds, percent, duration };
-    console.log(stopTime);
+    // console.log(stopTime);
     return localStorage.setItem ("videoplayer-current-time", JSON.stringify(stopTime))
 }, 1000))
 
